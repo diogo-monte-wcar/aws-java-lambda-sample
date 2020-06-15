@@ -15,7 +15,7 @@ public class MessageServiceImpl implements MessageService {
     try {
       return new ServiceResult("Hello, your request message was: " + message, checkIPService.getIp());
     } catch (IOException e) {
-      return new ServiceResult("Error checking ip!");
+      return new ServiceResult(ServiceResult.ERROR);
     }
   }
 }

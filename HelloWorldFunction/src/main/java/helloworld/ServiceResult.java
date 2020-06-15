@@ -15,8 +15,8 @@ public class ServiceResult {
     this.ip = ip;
   }
 
-  public ServiceResult(String errorMessage) {
-    this.status = ERROR;
+  public ServiceResult(int status) {
+    this.status = status;
     this.message = null;
     this.ip = null;
   }

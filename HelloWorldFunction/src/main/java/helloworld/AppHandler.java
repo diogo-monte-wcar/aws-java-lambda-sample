@@ -23,8 +23,8 @@ public class AppHandler implements RequestHandler<AppRequest, GatewayResponse> {
         headers.put("Content-Type", "application/json");
         headers.put("X-Custom-Header", "application/json");
 
-        if (Objects.isNull(input.getMessage())) {
-            return new GatewayResponse("Bad request", headers, 404);
+        if (Objects.isNull(input) || Objects.isNull(input.getMessage())) {
+            return new GatewayResponse("Wrong request body", headers, 404);
         }
 
         ServiceResult serviceResult = messageService.getMessage(input.getMessage());
