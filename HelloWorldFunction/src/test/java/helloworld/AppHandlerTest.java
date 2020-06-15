@@ -5,11 +5,11 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
-public class AppTest {
+public class AppHandlerTest {
   @Test
   public void successfulResponse() {
-    App app = new App();
-    GatewayResponse result = (GatewayResponse) app.handleRequest(null, null);
+    AppHandler appHandler = new AppHandler();
+    GatewayResponse result = (GatewayResponse) appHandler.handleRequest(null, null);
     assertEquals(result.getStatusCode(), 200);
     assertEquals(result.getHeaders().get("Content-Type"), "application/json");
     String content = result.getBody();
