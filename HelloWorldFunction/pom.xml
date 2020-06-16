@@ -88,6 +88,7 @@
               <configuration>
                 <sources>
                   <source>src/integration-test/java</source>
+                  <source>src/functional-test/java</source>
                 </sources>
               </configuration>
             </execution>
@@ -99,6 +100,19 @@
           <version>2.22.2</version>
           <executions>
             <execution>
+              <id>functional-test</id>
+              <goals>
+                <goal>integration-test</goal>
+                <goal>verify</goal>
+              </goals>
+              <configuration>
+                <includes>
+                  <include>**/*FunctionalTest.java</include>
+                </includes>
+              </configuration>
+            </execution>
+            <execution>
+              <id>integration-test</id>
               <goals>
                 <goal>integration-test</goal>
                 <goal>verify</goal>
